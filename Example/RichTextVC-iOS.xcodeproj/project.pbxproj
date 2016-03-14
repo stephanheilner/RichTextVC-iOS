@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		598451591C97607E00FBADC6 /* NSRange+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598451551C97607E00FBADC6 /* NSRange+Extras.swift */; };
+		5984515A1C97607E00FBADC6 /* String+Searching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598451561C97607E00FBADC6 /* String+Searching.swift */; };
+		5984515C1C97607E00FBADC6 /* RichTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598451581C97607E00FBADC6 /* RichTextViewController.swift */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9494A8EEB96F5DDB9C62C355 /* Pods_RichTextVC_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7100AE9F250884866E50596A /* Pods_RichTextVC_iOS_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		08038B03FB0E08B635A7323E /* RichTextVC-iOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "RichTextVC-iOS.podspec"; path = "../RichTextVC-iOS.podspec"; sourceTree = "<group>"; };
+		598451551C97607E00FBADC6 /* NSRange+Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRange+Extras.swift"; sourceTree = "<group>"; };
+		598451561C97607E00FBADC6 /* String+Searching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Searching.swift"; sourceTree = "<group>"; };
+		598451581C97607E00FBADC6 /* RichTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RichTextViewController.swift; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* RichTextVC-iOS_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RichTextVC-iOS_Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -47,6 +53,9 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				598451551C97607E00FBADC6 /* NSRange+Extras.swift */,
+				598451561C97607E00FBADC6 /* String+Searching.swift */,
+				598451581C97607E00FBADC6 /* RichTextViewController.swift */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -218,6 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5984515C1C97607E00FBADC6 /* RichTextViewController.swift in Sources */,
+				5984515A1C97607E00FBADC6 /* String+Searching.swift in Sources */,
+				598451591C97607E00FBADC6 /* NSRange+Extras.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
