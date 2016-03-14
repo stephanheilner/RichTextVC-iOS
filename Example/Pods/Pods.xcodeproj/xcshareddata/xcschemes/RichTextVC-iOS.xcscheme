@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5BC96C65517071D82C3DF519'
+               BlueprintIdentifier = 'D617C4D20E5D2F6A96E7AFE5'
                BlueprintName = 'RichTextVC-iOS'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'RichTextVC_iOS.framework'>

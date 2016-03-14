@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AD647394AC2781F69281B27C62E82C5 /* RichTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B97197934949FAB5DA9357C22732544F /* RichTextViewController.swift */; };
 		2EB801877B832EB8E8A3A61EC5F073BA /* RichTextVC-iOS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF45EF4463AABCC615F529FDDA86D95F /* RichTextVC-iOS.bundle */; };
+		3CFAAE814C8ACB86DE285C17D768C8F3 /* NSRange+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE07AE77C650BDF75D1409559A406E7 /* NSRange+Extras.swift */; };
 		43704B54B6FCC97156904B9A7F8E532F /* RichTextVC-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 77C6127DDB86BCE4BB9558238F2A6530 /* RichTextVC-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		495DBF74ED3A8A9FAD02B525163141B9 /* RichTextVC-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF030C94133514928CFAD29AC6BDA8D /* RichTextVC-iOS-dummy.m */; };
-		7092FE1993EA6984FF43B003B3A434CC /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81006EEA0B3F23FF622F9CA01317CB9 /* ReplaceMe.swift */; };
+		515BA8B1AF2171F97E8365F966C81D21 /* String+Searching.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49E131ECDD8D7ED7F086850113B7A38 /* String+Searching.swift */; };
 		776AFAE53ADA2E60144610332731ADF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		7AC49FF7670FF8F6C106C0FDAE8F1BFC /* Pods-RichTextVC-iOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B8361E846EC63ACC83E182AB2AB1894 /* Pods-RichTextVC-iOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1996DEC71B20C05B811EFF5464A6B43 /* RichTextVC-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF030C94133514928CFAD29AC6BDA8D /* RichTextVC-iOS-dummy.m */; };
 		E66EE1FB21ECC506521862F42B0D1150 /* Pods-RichTextVC-iOS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1CA23858FF6E02973F61C910E71D2C /* Pods-RichTextVC-iOS_Tests-dummy.m */; };
 		FEE77C3171281E59FF2F1A77FAC60D91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -43,20 +45,22 @@
 		40357CEC3068B2407426C11DBD5B9147 /* RichTextVC-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "RichTextVC-iOS.xcconfig"; sourceTree = "<group>"; };
 		542FA5D8BF4D32B466B240AFE4BA6CA6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A1CA23858FF6E02973F61C910E71D2C /* Pods-RichTextVC-iOS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RichTextVC-iOS_Tests-dummy.m"; sourceTree = "<group>"; };
+		6CE07AE77C650BDF75D1409559A406E7 /* NSRange+Extras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSRange+Extras.swift"; sourceTree = "<group>"; };
 		77C6127DDB86BCE4BB9558238F2A6530 /* RichTextVC-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RichTextVC-iOS-umbrella.h"; sourceTree = "<group>"; };
 		919DE1452B6F381BC35C086A826F0C09 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BF030C94133514928CFAD29AC6BDA8D /* RichTextVC-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RichTextVC-iOS-dummy.m"; sourceTree = "<group>"; };
 		A6F9F9E48E8C85BE7FDEC01CA25DBC02 /* RichTextVC-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "RichTextVC-iOS.modulemap"; sourceTree = "<group>"; };
 		B4177D1474D80B93E470B3B564761740 /* Pods-RichTextVC-iOS_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RichTextVC-iOS_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		B97197934949FAB5DA9357C22732544F /* RichTextViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RichTextViewController.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BE4EBB4910D09D2A87DE35FD54C9CC4B /* Pods-RichTextVC-iOS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RichTextVC-iOS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C6AF314EA2AE9A9FCB18EBDE4E5F8570 /* RichTextVC-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RichTextVC-iOS-prefix.pch"; sourceTree = "<group>"; };
 		CF39B89FF68249DE09D6CE11A6D28C2B /* Pods-RichTextVC-iOS_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RichTextVC-iOS_Tests-resources.sh"; sourceTree = "<group>"; };
+		D49E131ECDD8D7ED7F086850113B7A38 /* String+Searching.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Searching.swift"; sourceTree = "<group>"; };
 		DF45EF4463AABCC615F529FDDA86D95F /* RichTextVC-iOS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RichTextVC-iOS.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4839CFBEAFD7442D29542CCA9ED6BDD /* Pods-RichTextVC-iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RichTextVC-iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EE8884C9A9DA1B3E71D45C2BC4667D7C /* Pods_RichTextVC_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RichTextVC_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17FDC05626B698B3BC14730CF1661E1 /* Pods-RichTextVC-iOS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RichTextVC-iOS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F81006EEA0B3F23FF622F9CA01317CB9 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,22 +90,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02F75AC95C0B6428BD68F34738768949 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				15A95780BF4C3118D46562B9BCDE9419 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		15A95780BF4C3118D46562B9BCDE9419 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6CE07AE77C650BDF75D1409559A406E7 /* NSRange+Extras.swift */,
+				B97197934949FAB5DA9357C22732544F /* RichTextViewController.swift */,
+				D49E131ECDD8D7ED7F086850113B7A38 /* String+Searching.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		328DBDDC1ED45B270B8E980047060623 /* RichTextVC-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4ECB40BD132C6ACA718A2F28C18B62C0 /* Pod */,
+				02F75AC95C0B6428BD68F34738768949 /* Pod */,
 				FD0E6F974D5535ED929A795BCCA7C2E2 /* Support Files */,
 			);
 			name = "RichTextVC-iOS";
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		4ECB40BD132C6ACA718A2F28C18B62C0 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				F953ADA77F75EE41CDAB8788D5F4BEEF /* Classes */,
-			);
-			path = Pod;
 			sourceTree = "<group>";
 		};
 		5F610A75E0AE6F3DC3DDFB0FE804F136 /* Targets Support Files */ = {
@@ -175,14 +189,6 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		F953ADA77F75EE41CDAB8788D5F4BEEF /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				F81006EEA0B3F23FF622F9CA01317CB9 /* ReplaceMe.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		FD0E6F974D5535ED929A795BCCA7C2E2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +229,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D9A54FC3FD1B716B7BC504992EFED6F /* Build configuration list for PBXNativeTarget "RichTextVC-iOS" */;
 			buildPhases = (
-				1805F33BD28DD9CE54A0966ACEC4896A /* Sources */,
+				57F59FB825351C286C07E40F00DD0368 /* Sources */,
 				0FEFBA72BF70024C5DF58FC4E4535FC0 /* Frameworks */,
 				ACA6B80308C8EE05E1468A7BE27F02AA /* Resources */,
 				66A6717A5C24DB8E7645045233EE5BB6 /* Headers */,
@@ -328,12 +334,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1805F33BD28DD9CE54A0966ACEC4896A /* Sources */ = {
+		57F59FB825351C286C07E40F00DD0368 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7092FE1993EA6984FF43B003B3A434CC /* ReplaceMe.swift in Sources */,
-				495DBF74ED3A8A9FAD02B525163141B9 /* RichTextVC-iOS-dummy.m in Sources */,
+				3CFAAE814C8ACB86DE285C17D768C8F3 /* NSRange+Extras.swift in Sources */,
+				C1996DEC71B20C05B811EFF5464A6B43 /* RichTextVC-iOS-dummy.m in Sources */,
+				0AD647394AC2781F69281B27C62E82C5 /* RichTextViewController.swift in Sources */,
+				515BA8B1AF2171F97E8365F966C81D21 /* String+Searching.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
