@@ -1,0 +1,14 @@
+PODS:
+  - RichTextVC-iOS (0.1.0)
+
+DEPENDENCIES:
+  - RichTextVC-iOS (from `../`)
+
+EXTERNAL SOURCES:
+  RichTextVC-iOS:
+    :path: ../
+
+SPEC CHECKSUMS:
+  RichTextVC-iOS: 2109f3add299275a1133984ffc5808f29d002f5c
+
+COCOAPODS: 0.39.0
