@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RichTextViewController: UIViewController {
+public class RichTextViewController: UIViewController {
 
     var textView = UITextView()
     var afterNumberCharacter = "."
