@@ -16,16 +16,16 @@ public class RichTextViewController: UIViewController {
     var numberedListTrailer = ""
     var previousSelection = NSRange()
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         numberedListTrailer = "\(afterNumberCharacter)\(spaceAfterNumberCharacter)"
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(textView)
     }
@@ -57,7 +57,7 @@ public class RichTextViewController: UIViewController {
     /// - parameter toTextView: The `UITextView` to remove the text from.
     private func removeTextFromRange(range: NSRange, fromTextView textView: UITextView) {
         let substringLength = (textView.text as NSString).substringWithRange(range).length
-        let previousRange = NSRange(location: textView.selectedRange.location, length: textView.selectedRange.length)
+
         textView.textStorage.beginEditing()
         textView.textStorage.replaceCharactersInRange(range, withAttributedString: NSAttributedString(string: ""))
         textView.textStorage.endEditing()
@@ -103,7 +103,7 @@ public class RichTextViewController: UIViewController {
     /// Toggles a numbered list on the current line if there is a zero-length selection;
     /// else removes all numbered lists in selection if they exist
     /// or adds them to each line if there are no numbered lists in selection
-    func toggleNumberedList() {
+    public func toggleNumberedList() {
         if textView.selectedRange.length == 0 {
             if selectionContainsNumberedList(textView.selectedRange) {
                 if let newLineIndex = textView.text.previousIndexOfSubstring("\n", fromIndex: textView.selectedRange.location) {
@@ -440,12 +440,12 @@ public class RichTextViewController: UIViewController {
 
 extension RichTextViewController: UITextViewDelegate {
     
-    func textViewDidChangeSelection(textView: UITextView) {
+    public func textViewDidChangeSelection(textView: UITextView) {
         moveSelectionIfInRangeOfList()
         previousSelection = textView.selectedRange
     }
 
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    public func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         var changed = false
 
         switch text {

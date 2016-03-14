@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "RichTextVC-iOS"
   s.version          = "0.1.0"
-  s.summary          = "A short description of RichTextVC-iOS."
+  s.summary          = "A Rich Text ViewController for iOS."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,13 +17,14 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+A ViewController for iOS that contains a UITextView for adding rich text
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/RichTextVC-iOS"
+  s.homepage         = "https://github.com/LyokoTech/RichTextVC-iOS"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Rhett Rogers" => "serenade.xs@icloud.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/RichTextVC-iOS.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/LyokoTech/RichTextVC-iOS.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'
