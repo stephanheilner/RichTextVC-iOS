@@ -16,6 +16,12 @@ public class RichTextViewController: UIViewController {
     var numberedListTrailer = ""
     var previousSelection = NSRange()
     
+    public var regularFont: UIFont?
+    public var boldFont: UIFont?
+    public var italicFont: UIFont?
+    public var boldItalicFont: UIFont?
+    
+    
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         numberedListTrailer = "\(afterNumberCharacter)\(spaceAfterNumberCharacter)"
@@ -435,7 +441,124 @@ public class RichTextViewController: UIViewController {
             textView.selectedRange = range
         }
     }
+    
+    // MARK: Font Adjustments
+    
+    private func applyFontAttribute(font: UIFont) {
+        guard let text = textView.attributedText else { return }
+        
+        let attributedText = NSMutableAttributedString(attributedString: text)
+        
+        attributedText.beginEditing()
+        attributedText.enumerateAttributesInRange(textView.selectedRange, options: []) { dictionary, range, stop in
+            attributedText.addAttribute(NSFontAttributeName, value: font, range: range)
+        }
+        attributedText.endEditing()
+        
+        textView.attributedText = attributedText   
+    }
+    
+    // MARK: Bold Functions
+    
+    public func selectionContainsBold(var range: NSRange) -> Bool {
+        guard let attributedString = textView.attributedText else { return false }
+        
+        var bolded = false
+        
+        if range.length == 0 && range.location > 0 {
+            range.location = range.location - 1
+            range.length = 1
+        }
+        
+        attributedString.enumerateAttributesInRange(range, options: []) { dictionary, range, stop in
+            guard let font = dictionary[NSFontAttributeName] as? UIFont, boldFont = self.boldFont, boldItalicFont = self.boldItalicFont else { return }
+            
+            bolded = font == boldFont || font == boldItalicFont
+        }
+        
+        return bolded
+    }
 
+    public func toggleBold() {
+        guard let regularFont = regularFont, boldFont = boldFont, italicFont = italicFont, boldItalicFont = boldItalicFont else { return }
+        
+        if textView.selectedRange.length > 0 {
+            if !selectionContainsBold(textView.selectedRange) {
+                if selectionContainsItalic(textView.selectedRange) {
+                    applyFontAttribute(boldItalicFont)
+                } else {
+                    applyFontAttribute(boldFont)
+                }
+            } else if selectionContainsItalic(textView.selectedRange) {
+                applyFontAttribute(italicFont)
+            } else {
+                applyFontAttribute(regularFont)
+            }
+        } else {
+            if !selectionContainsBold(textView.selectedRange) {
+                if selectionContainsItalic(textView.selectedRange) {
+                    textView.typingAttributes[NSFontAttributeName] = boldItalicFont
+                } else {
+                    textView.typingAttributes[NSFontAttributeName] = boldFont
+                }
+            } else if selectionContainsItalic(textView.selectedRange) {
+                textView.typingAttributes[NSFontAttributeName] = italicFont
+            } else {
+                textView.typingAttributes[NSFontAttributeName] = regularFont
+            }
+        }
+    }
+    
+    // MARK: Italic Functions
+    
+    public func selectionContainsItalic(var range: NSRange) -> Bool {
+        guard let attributedString = textView.attributedText else { return false }
+        
+        var italic = false
+        
+        if range.length == 0 && range.location > 0 {
+            range.location = range.location - 1
+            range.length = 1
+        }
+        
+        attributedString.enumerateAttributesInRange(range, options: []) { dictionary, range, stop in
+            guard let font = dictionary[NSFontAttributeName] as? UIFont, italicFont = self.italicFont, boldItalicFont = self.boldItalicFont else { return }
+            
+            italic = font == italicFont || font == boldItalicFont
+        }
+        
+        return italic
+    }
+    
+    public func toggleItalic() {
+        guard let regularFont = regularFont, boldFont = boldFont, italicFont = italicFont, boldItalicFont = boldItalicFont else { return }
+        
+        if textView.selectedRange.length > 0 {
+            if !selectionContainsItalic(textView.selectedRange) {
+                if selectionContainsBold(textView.selectedRange) {
+                    applyFontAttribute(boldItalicFont)
+                } else {
+                    applyFontAttribute(italicFont)
+                }
+            } else if selectionContainsBold(textView.selectedRange) {
+                applyFontAttribute(boldFont)
+            } else {
+                applyFontAttribute(regularFont)
+            }
+        } else {
+            if !selectionContainsItalic(textView.selectedRange) {
+                if selectionContainsBold(textView.selectedRange) {
+                    textView.typingAttributes[NSFontAttributeName] = boldItalicFont
+                } else {
+                    textView.typingAttributes[NSFontAttributeName] = italicFont
+                }
+            } else if selectionContainsBold(textView.selectedRange) {
+                textView.typingAttributes[NSFontAttributeName] = boldFont
+            } else {
+                textView.typingAttributes[NSFontAttributeName] = regularFont
+            }
+        }
+    }
 }
 
 extension RichTextViewController: UITextViewDelegate {
