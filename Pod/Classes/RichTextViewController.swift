@@ -10,7 +10,7 @@ import UIKit
 
 public class RichTextViewController: UIViewController {
 
-    var textView = UITextView()
+    public var textView = UITextView()
     var afterNumberCharacter = "."
     var spaceAfterNumberCharacter = "\u{00A0}"
     var numberedListTrailer = ""
@@ -218,7 +218,7 @@ public class RichTextViewController: UIViewController {
     /// - parameter selection: An `NSRange` to check
     ///
     /// - returns: True if selection contains at least 1 numbered list, false otherwise
-    private func selectionContainsNumberedList(var selection: NSRange) -> Bool {
+    public func selectionContainsNumberedList(var selection: NSRange) -> Bool {
         var containsNumberedList = false
 
         if selection.length == 0 {
