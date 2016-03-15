@@ -25,10 +25,10 @@ public class RichTextViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(textView)
+    override public func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
     }
+    
 
     /// Replaces text in a range with text in parameter
     ///
