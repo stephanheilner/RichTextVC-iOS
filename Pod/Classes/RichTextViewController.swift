@@ -13,7 +13,9 @@ public class RichTextViewController: UIViewController {
     public var textView = UITextView()
     var afterNumberCharacter = "."
     var spaceAfterNumberCharacter = "\u{00A0}"
+    public var bulletedLineStarter = "\u{2022}\u{00A0}"
     var numberedListTrailer = ""
+    
     var previousSelection = NSRange()
     
     public var regularFont: UIFont?
@@ -110,6 +112,7 @@ public class RichTextViewController: UIViewController {
     /// else removes all numbered lists in selection if they exist
     /// or adds them to each line if there are no numbered lists in selection
     public func toggleNumberedList() {
+        
         if textView.selectedRange.length == 0 {
             if selectionContainsNumberedList(textView.selectedRange) {
                 if let newLineIndex = textView.text.previousIndexOfSubstring("\n", fromIndex: textView.selectedRange.location) {
@@ -337,7 +340,7 @@ public class RichTextViewController: UIViewController {
     }
     
     /// Moves the selection out of a number.  Call this when a selection changes
-    private func moveSelectionIfInRangeOfList() {
+    private func moveSelectionIfInRangeOfNumberedList() {
         guard textView.text.length > 3 else { return }
         
         var range = NSRange(location: textView.selectedRange.location, length: textView.selectedRange.length)
@@ -455,7 +458,7 @@ public class RichTextViewController: UIViewController {
         }
         attributedText.endEditing()
         
-        textView.attributedText = attributedText   
+        textView.attributedText = attributedText
     }
     
     // MARK: Bold Functions
@@ -559,12 +562,106 @@ public class RichTextViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: Bulleted Lists
+    
+    public func selectionContainsBulletedList(selection: NSRange) -> Bool {
+        var containsBulletedList = false
+        
+        if let previousIndex = textView.text.previousIndexOfSubstring(bulletedLineStarter, fromIndex: selection.location) {
+            let newLineIndex = (textView.text.previousIndexOfSubstring("\n", fromIndex: selection.location) ?? -1) + 1
+            containsBulletedList = newLineIndex == previousIndex
+        }
+        
+        if selection.length > 0 && !containsBulletedList {
+            containsBulletedList = (textView.text as NSString).substringWithRange(selection).containsString(bulletedLineStarter)
+        }
+        
+        return containsBulletedList
+    }
+    
+    private func moveSelectionIfInRangeOfBulletedList() {
+        guard textView.text.length > 1 && textView.selectedRange.location < textView.text.length else { return }
+        
+        
+        var range = NSRange(location: textView.selectedRange.location, length: textView.selectedRange.length)
+        if range.length == 0 && range.location > 0 {
+            range.length = 2
+            while range.length + range.location > textView.text.length {
+                range.location -= 1
+            }
+        }
+        var loops = 0
+        var testString = (textView.text as NSString).substringWithRange(range)
+        while loops < 2 {
+            if testString == bulletedLineStarter {
+                range.location += 2
+                range.length = 0
+                textView.selectedRange = range
+                break
+            }
+            
+            if range.location > 0 {
+                range.location -= 1
+            } else {
+                break
+            }
+            testString = (textView.text as NSString).substringWithRange(range)
+            loops += 1
+        }
+        
+    }
+    
+    public func toggleBulletedList() {
+        if textView.selectedRange.length == 0 {
+            if selectionContainsBulletedList(textView.selectedRange) {
+                if let bulletIndex = textView.text.previousIndexOfSubstring(bulletedLineStarter, fromIndex: textView.selectedRange.location) {
+                    removeTextFromRange(NSRange(location: bulletIndex, length: bulletedLineStarter.length), fromTextView: textView)
+                }
+            } else {
+                let newLineIndex = (textView.text.previousIndexOfSubstring("\n", fromIndex: textView.selectedRange.location) ?? -1) + 1
+                addText(bulletedLineStarter, toTextView: textView, atIndex: newLineIndex)
+            }
+        } else {
+            var bulletsInSelection = false
+            
+            if selectionContainsBulletedList(NSRange(location: textView.selectedRange.location, length: 0)), let bulletIndex = textView.text.previousIndexOfSubstring(bulletedLineStarter, fromIndex: textView.selectedRange.location) {
+                bulletsInSelection = true
+                removeTextFromRange(NSRange(location: bulletIndex, length: bulletedLineStarter.length), fromTextView: textView)
+            }
+            
+            if selectionContainsBulletedList(textView.selectedRange) {
+                bulletsInSelection = true
+                var index = textView.selectedRange.location
+                while true {
+                    guard let nextBulletIndex = textView.text.nextIndexOfSubstring(bulletedLineStarter, fromIndex: index)  else { break }
+
+                    removeTextFromRange(NSRange(location: nextBulletIndex, length: bulletedLineStarter.length), fromTextView: textView)
+                    index = nextBulletIndex
+                }
+            }
+            
+            if !bulletsInSelection {
+                let newLineIndex = (textView.text.previousIndexOfSubstring("\n", fromIndex: textView.selectedRange.location) ?? -1) + 1
+                addText(bulletedLineStarter, toTextView: textView, atIndex: newLineIndex)
+                
+                var index = textView.selectedRange.location
+                while true {
+                    guard let nextLineIndex = textView.text.nextIndexOfSubstring("\n", fromIndex: index)  else { break }
+                    
+                    addText(bulletedLineStarter, toTextView: textView, atIndex: nextLineIndex + 1)
+                    index = nextLineIndex + 1
+                }
+            }
+        }
+    }
 }
 
 extension RichTextViewController: UITextViewDelegate {
     
     public func textViewDidChangeSelection(textView: UITextView) {
-        moveSelectionIfInRangeOfList()
+        moveSelectionIfInRangeOfNumberedList()
+        moveSelectionIfInRangeOfBulletedList()
         previousSelection = textView.selectedRange
     }
 
