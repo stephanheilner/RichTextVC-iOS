@@ -112,6 +112,9 @@ public class RichTextViewController: UIViewController {
     /// else removes all numbered lists in selection if they exist
     /// or adds them to each line if there are no numbered lists in selection
     public func toggleNumberedList() {
+        if selectionContainsBulletedList(textView.selectedRange) {
+            toggleBulletedList()
+        }
         
         if textView.selectedRange.length == 0 {
             if selectionContainsNumberedList(textView.selectedRange) {
@@ -286,35 +289,51 @@ public class RichTextViewController: UIViewController {
     ///
     /// - returns: `true` if a number was added, `false` otherwise
     private func addedListsIfActiveInRange(range: NSRange) -> Bool {
-        guard selectionContainsNumberedList(range) else { return false }
-
-        let previousNumber = previousNumberOfNumberedList(range) ?? 0
-        let previousNumberString = "\(previousNumber)\(numberedListTrailer)"
-        let previousRange = NSRange(location: range.location - previousNumberString.length, length: previousNumberString.length)
-        var newNumber = previousNumber + 1
-        let newNumberString = "\n\(newNumber)\(numberedListTrailer)"
-
-        if textView.attributedText.attributedSubstringFromRange(previousRange).string == previousNumberString {
-            removeTextFromRange(previousRange, fromTextView: textView)
-        } else {
-            addText(newNumberString, toTextView: textView, atIndex: range.location)
-
-            // TODO: Complete iterating through the string incrementing the numbers
-            var index = range.location + newNumberString.length
-
-            while true {
-                let stringToReplace = "\(newNumber)\(numberedListTrailer)"
-                index = textView.text.nextIndexOfSubstring(stringToReplace, fromIndex: index) ?? -1
-                guard index >= 0 else { break }
+        if selectionContainsNumberedList(range) {
+            
+            let previousNumber = previousNumberOfNumberedList(range) ?? 0
+            let previousNumberString = "\(previousNumber)\(numberedListTrailer)"
+            let previousRange = NSRange(location: range.location - previousNumberString.length, length: previousNumberString.length)
+            var newNumber = previousNumber + 1
+            let newNumberString = "\n\(newNumber)\(numberedListTrailer)"
+            
+            if textView.attributedText.attributedSubstringFromRange(previousRange).string == previousNumberString {
+                removeTextFromRange(previousRange, fromTextView: textView)
+            } else {
+                addText(newNumberString, toTextView: textView, atIndex: range.location)
                 
-                newNumber += 1
+                // TODO: Complete iterating through the string incrementing the numbers
+                var index = range.location + newNumberString.length
                 
-                replaceTextInRange(NSRange(location: index, length: stringToReplace.length), withText: "\(newNumber)\(numberedListTrailer)", inTextView: textView)
-                index += 1
+                while true {
+                    let stringToReplace = "\(newNumber)\(numberedListTrailer)"
+                    index = textView.text.nextIndexOfSubstring(stringToReplace, fromIndex: index) ?? -1
+                    guard index >= 0 else { break }
+                    
+                    newNumber += 1
+                    
+                    replaceTextInRange(NSRange(location: index, length: stringToReplace.length), withText: "\(newNumber)\(numberedListTrailer)", inTextView: textView)
+                    index += 1
+                }
             }
+            
+            return true
+        } else if selectionContainsBulletedList(range) {
+            let previousRange = NSRange(location: range.location - bulletedLineStarter.length, length: bulletedLineStarter.length)
+            
+            let bulletedString = NSAttributedString(string: "\n" + bulletedLineStarter, attributes: textView.typingAttributes)
+            textView.textStorage.beginEditing()
+            if let subString = textView.attributedText?.attributedSubstringFromRange(previousRange).string where subString == bulletedLineStarter {
+                textView.textStorage.replaceCharactersInRange(previousRange, withAttributedString: NSAttributedString(string: "", attributes: textView.typingAttributes))
+            } else {
+                textView.textStorage.insertAttributedString(bulletedString, atIndex: range.location)
+            }
+            textView.textStorage.endEditing()
+            textView.selectedRange = NSRange(location: range.location + bulletedString.length, length: 0)
+            
+            return true
         }
-
-        return true
+        return false
     }
 
     /// Removes a number from a numbered list.  This function should be called when the user is backspacing on a number of a numbered list
@@ -323,20 +342,41 @@ public class RichTextViewController: UIViewController {
     ///
     /// - returns: true if a number was removed, false otherwise
     private func removedListsIfActiveInRange(range: NSRange) -> Bool {
-        guard textView.selectedRange.location > 2 else { return false }
-
-        var removed = false
+        guard textView.selectedRange.location >= 2 else { return false }
+        
         let previousNumber = previousNumberOfNumberedList(textView.selectedRange) ?? 0
         let previousNumberString = "\(previousNumber)\(numberedListTrailer)"
-        let previousRange = NSRange(location: range.location - previousNumberString.length + 1, length: previousNumberString.length)
-
-        let subString = (textView.text as NSString).substringWithRange(previousRange)
-
-        if subString == previousNumberString {
-            removeTextFromRange(previousRange, fromTextView: textView)
-            removed = true
+        let previousNumberRange = NSRange(location: range.location - previousNumberString.length + 1, length: previousNumberString.length)
+        let previousBulletRange = NSRange(location: range.location - bulletedLineStarter.length + 1, length: bulletedLineStarter.length)
+        let adjustedRange = NSRange(location: range.location + 1, length: 0)
+        
+        if selectionContainsNumberedList(adjustedRange) {
+            var removed = false
+            
+            let subString = (textView.text as NSString).substringWithRange(previousNumberRange)
+            
+            if subString == previousNumberString {
+                removeTextFromRange(previousNumberRange, fromTextView: textView)
+                removed = true
+            }
+            return removed
+        } else if selectionContainsBulletedList(adjustedRange) {
+            var removed = false
+            
+            let subString = (textView.text as NSString).substringWithRange(previousBulletRange)
+            if subString == bulletedLineStarter {
+                textView.textStorage.beginEditing()
+                textView.textStorage.replaceCharactersInRange(previousBulletRange, withString: "")
+                textView.textStorage.endEditing()
+                textView.selectedRange = NSRange(location: previousBulletRange.location, length: 0)
+                removed = true
+            }
+            
+            
+            return removed
         }
-        return removed
+        
+        return false
     }
     
     /// Moves the selection out of a number.  Call this when a selection changes
@@ -613,6 +653,10 @@ public class RichTextViewController: UIViewController {
     }
     
     public func toggleBulletedList() {
+        if selectionContainsNumberedList(textView.selectedRange) {
+            toggleNumberedList()
+        }
+        
         if textView.selectedRange.length == 0 {
             if selectionContainsBulletedList(textView.selectedRange) {
                 if let bulletIndex = textView.text.previousIndexOfSubstring(bulletedLineStarter, fromIndex: textView.selectedRange.location) {
@@ -666,6 +710,7 @@ extension RichTextViewController: UITextViewDelegate {
     }
 
     public func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        
         var changed = false
 
         switch text {
