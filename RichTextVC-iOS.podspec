@@ -21,11 +21,9 @@ A ViewController for iOS that contains a UITextView for adding rich text
                        DESC
 
   s.homepage         = "https://github.com/LyokoTech/RichTextVC-iOS"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Rhett Rogers" => "serenade.xs@icloud.com" }
   s.source           = { :git => "https://github.com/LyokoTech/RichTextVC-iOS.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
@@ -35,7 +33,4 @@ A ViewController for iOS that contains a UITextView for adding rich text
     'RichTextVC-iOS' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

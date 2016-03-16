@@ -5,9 +5,11 @@
 [![License](https://img.shields.io/cocoapods/l/RichTextVC-iOS.svg?style=flat)](http://cocoapods.org/pods/RichTextVC-iOS)
 [![Platform](https://img.shields.io/cocoapods/p/RichTextVC-iOS.svg?style=flat)](http://cocoapods.org/pods/RichTextVC-iOS)
 
+RichTextVC-iOS is a view controller containing a `UITextView` that can do rich text editing.  You can do bold, italics, numbered lists, and bulleted lists.
+
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To use the `RichTextViewController` class, create a `UIViewController` class and have it be a sub class of `RichTextViewController`.  In order for Bold and Italics to work you need to set the `regularFont`, `boldFont`, `italicFont`, and `boldItalicFont` vars.  
 
 ## Requirements
 
