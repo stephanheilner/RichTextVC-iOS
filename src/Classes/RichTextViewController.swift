@@ -89,10 +89,10 @@ public class RichTextViewController: UIViewController {
     /// - parameter toTextView: The `UITextView` to add the text to.
     /// - parameter atIndex: The index to insert the text at.
     /// - parameter withAttributes: Optional.  Attributes to apply to the added text.  Will use attributes at the index otherwise.
-    private func addText(text: String, toTextView textView: UITextView, atIndex index: Int, withAttributes defaultAttributes: [String: AnyObject]? = nil) {
+    private func addText(text: String, toTextView textView: UITextView, atIndex index: Int) {
         let previousTypingAttributes = textView.typingAttributes
         
-        let attributes = defaultAttributes ?? (index < textView.text.length ? textView.attributedText.attributesAtIndex(index, effectiveRange: nil) : textView.typingAttributes)
+        let attributes = defaultListAttributes ?? (index < textView.text.length ? textView.attributedText.attributesAtIndex(index, effectiveRange: nil) : textView.typingAttributes)
         textView.textStorage.beginEditing()
         textView.textStorage.insertAttributedString(NSAttributedString(string: text, attributes: attributes), atIndex: index)
         textView.textStorage.endEditing()
@@ -114,7 +114,7 @@ public class RichTextViewController: UIViewController {
         if selectionContainsBulletedList(textView.selectedRange) {
             toggleBulletedList()
         }
-        
+
         if textView.selectedRange.length == 0 {
             if selectionContainsNumberedList(textView.selectedRange) {
                 if let newLineIndex = textView.text.previousIndexOfSubstring("\n", fromIndex: textView.selectedRange.location) {
@@ -129,10 +129,10 @@ public class RichTextViewController: UIViewController {
                 if let newLineIndex = textView.text.previousIndexOfSubstring("\n", fromIndex: textView.selectedRange.location) {
                     let newNumber = (previousNumberOfNumberedList(textView.selectedRange) ?? 0) + 1
                     let insertString = "\(newNumber)\(RichTextViewController.numberedListTrailer)"
-                    addText(insertString, toTextView: textView, atIndex: newLineIndex + 1, withAttributes: defaultListAttributes)
+                    addText(insertString, toTextView: textView, atIndex: newLineIndex + 1)
                 } else {
                     let insertString = "1\(RichTextViewController.numberedListTrailer)"
-                    addText(insertString, toTextView: textView, atIndex: 0, withAttributes: defaultListAttributes)
+                    addText(insertString, toTextView: textView, atIndex: 0)
                 }
             }
         } else {
@@ -167,7 +167,7 @@ public class RichTextViewController: UIViewController {
                 let previousNewLineIndex = textView.text.previousIndexOfSubstring("\n", fromIndex: textView.selectedRange.location) ?? -1
 
                 if previousNumberedIndex < previousNewLineIndex {
-                    addText("\(newNumber)\(RichTextViewController.numberedListTrailer)", toTextView: textView, atIndex: previousNewLineIndex + 1, withAttributes: defaultListAttributes)
+                    addText("\(newNumber)\(RichTextViewController.numberedListTrailer)", toTextView: textView, atIndex: previousNewLineIndex + 1)
                     newNumber += 1
                 }
 
@@ -176,7 +176,7 @@ public class RichTextViewController: UIViewController {
                 while index < textView.text.length {
                     guard let newLineIndex = textView.text.nextIndexOfSubstring("\n", fromIndex: index) where
                         newLineIndex < textView.selectedRange.endLocation else { break }
-                    addText("\(newNumber)\(RichTextViewController.numberedListTrailer)", toTextView: textView, atIndex: newLineIndex + 1, withAttributes: defaultListAttributes)
+                    addText("\(newNumber)\(RichTextViewController.numberedListTrailer)", toTextView: textView, atIndex: newLineIndex + 1)
                     newNumber += 1
                     index = newLineIndex + 1
                 }
@@ -296,7 +296,7 @@ public class RichTextViewController: UIViewController {
             if textView.attributedText.attributedSubstringFromRange(previousRange).string == previousNumberString {
                 removeTextFromRange(previousRange, fromTextView: textView)
             } else {
-                addText(newNumberString, toTextView: textView, atIndex: range.location, withAttributes: defaultListAttributes)
+                addText(newNumberString, toTextView: textView, atIndex: range.location)
 
                 var index = range.location + newNumberString.length
 
@@ -321,7 +321,7 @@ public class RichTextViewController: UIViewController {
             if let subString = textView.attributedText?.attributedSubstringFromRange(previousRange).string where subString == RichTextViewController.bulletedLineStarter {
                 textView.textStorage.replaceCharactersInRange(previousRange, withAttributedString: NSAttributedString(string: "", attributes: textView.typingAttributes))
             } else {
-                addText(bulletedString, toTextView: textView, atIndex: range.location, withAttributes: defaultListAttributes)
+                addText(bulletedString, toTextView: textView, atIndex: range.location)
             }
             textView.textStorage.endEditing()
             textView.selectedRange = NSRange(location: range.location + (bulletedString as NSString).length, length: 0)
@@ -614,7 +614,7 @@ public class RichTextViewController: UIViewController {
                 }
             } else {
                 let newLineIndex = (textView.text.previousIndexOfSubstring("\n", fromIndex: textView.selectedRange.location) ?? -1) + 1
-                addText(RichTextViewController.bulletedLineStarter, toTextView: textView, atIndex: newLineIndex, withAttributes: defaultListAttributes)
+                addText(RichTextViewController.bulletedLineStarter, toTextView: textView, atIndex: newLineIndex)
             }
         } else {
             var bulletsInSelection = false
@@ -637,13 +637,13 @@ public class RichTextViewController: UIViewController {
 
             if !bulletsInSelection {
                 let newLineIndex = (textView.text.previousIndexOfSubstring("\n", fromIndex: textView.selectedRange.location) ?? -1) + 1
-                addText(RichTextViewController.bulletedLineStarter, toTextView: textView, atIndex: newLineIndex, withAttributes: defaultListAttributes)
+                addText(RichTextViewController.bulletedLineStarter, toTextView: textView, atIndex: newLineIndex)
 
                 var index = textView.selectedRange.location
                 while index < textView.text.length {
                     guard let nextLineIndex = textView.text.nextIndexOfSubstring("\n", fromIndex: index) else { break }
 
-                    addText(RichTextViewController.bulletedLineStarter, toTextView: textView, atIndex: nextLineIndex + 1, withAttributes: defaultListAttributes)
+                    addText(RichTextViewController.bulletedLineStarter, toTextView: textView, atIndex: nextLineIndex + 1)
                     index = nextLineIndex + 1
                 }
             }
