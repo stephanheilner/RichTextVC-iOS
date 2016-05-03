@@ -496,18 +496,15 @@ public class RichTextViewController: UIViewController {
     }
     
     private func removeFormattingFromListLeadsInRange(range: NSRange) {
-        guard range.length > 0 else { return }
-        
-        var listHeadRegex: NSRegularExpression?
-        
-        do {
-            listHeadRegex = try NSRegularExpression(pattern: "^(([0-9]+\\.\\u00A0)|(\\u2022\\u00A0)).*$", options: .AnchorsMatchLines)
-        } catch {
-            print("Failed to remove formatting")
+        guard let listHeadRegex = try? NSRegularExpression(pattern: "^(([0-9]+\\.\\u00A0)|(\\u2022\\u00A0)).*$", options: .AnchorsMatchLines),
+            regularFont = regularFont where
+            range.length > 0
+            else {
+                print("Failed to remove formatting")
+                return
         }
         
-        listHeadRegex?.matchesInString(textView.text, options: [], range: range).forEach { match in
-            guard let regularFont = self.regularFont else { return }
+        listHeadRegex.matchesInString(textView.text, options: [], range: range).forEach { match in
             let matchedRange = match.rangeAtIndex(1)
             self.textView.textStorage.beginEditing()
             self.textView.textStorage.setAttributes([NSFontAttributeName: regularFont], range: matchedRange)
