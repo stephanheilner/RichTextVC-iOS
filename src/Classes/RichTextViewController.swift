@@ -62,22 +62,19 @@ public class RichTextViewController: UIViewController {
     /// - parameter toTextView: The `UITextView` to remove the text from.
     private func removeTextFromRange(range: NSRange, fromTextView textView: UITextView) {
         let substringLength = (textView.text as NSString).substringWithRange(range).length
-
+        let initialRange = textView.selectedRange
+        
         textView.textStorage.beginEditing()
         textView.textStorage.replaceCharactersInRange(range, withAttributedString: NSAttributedString(string: ""))
         textView.textStorage.endEditing()
 
         if range.comesBeforeRange(textView.selectedRange) {
-            textView.selectedRange.location -= substringLength
+            textView.selectedRange.location -= (substringLength - (initialRange.location - textView.selectedRange.location))
+            textView.selectedRange.length = initialRange.length
         } else if range.containedInRange(textView.selectedRange) {
-            textView.selectedRange.length -= substringLength
-        } else if range.containsBeginningOfRange(textView.selectedRange) {
-            let inSelectionRemoved = textView.selectedRange.location - range.location
-            let outSelectionRemoved = range.length - inSelectionRemoved
-            textView.selectedRange.location -= outSelectionRemoved
-            textView.selectedRange.length -= inSelectionRemoved
-        } else if range.containsEndOfRange(textView.selectedRange) {
-            textView.selectedRange.length -= textView.selectedRange.endLocation - range.location
+            textView.selectedRange.length -= (substringLength - (initialRange.length - textView.selectedRange.length))
+        } else if range.location == textView.selectedRange.location && range.length == textView.selectedRange.length {
+            textView.selectedRange.length = 0
         }
 
         textViewDidChangeSelection(textView)
@@ -174,8 +171,8 @@ public class RichTextViewController: UIViewController {
                 var index = textView.selectedRange.location
 
                 while index < textView.text.length {
-                    guard let newLineIndex = textView.text.nextIndexOfSubstring("\n", fromIndex: index) where
-                        newLineIndex < textView.selectedRange.endLocation else { break }
+                    guard let newLineIndex = textView.text.nextIndexOfSubstring("\n", fromIndex: index) where newLineIndex < textView.selectedRange.endLocation else { break }
+                    
                     addText("\(newNumber)\(RichTextViewController.numberedListTrailer)", toTextView: textView, atIndex: newLineIndex + 1)
                     newNumber += 1
                     index = newLineIndex + 1
@@ -212,7 +209,6 @@ public class RichTextViewController: UIViewController {
         guard let numberedTrailerIndex = string.nextIndexOfSubstring(RichTextViewController.numberedListTrailer, fromIndex: index) else { return nil }
         
         var newLineIndex = string.previousIndexOfSubstring("\n", fromIndex: numberedTrailerIndex) ?? -1
-        
         if newLineIndex >= -1 {
             newLineIndex += 1
         }
@@ -496,12 +492,10 @@ public class RichTextViewController: UIViewController {
     }
     
     private func removeFormattingFromListLeadsInRange(range: NSRange) {
-        guard let listHeadRegex = try? NSRegularExpression(pattern: "^(([0-9]+\\.\\u00A0)|(\\u2022\\u00A0)).*$", options: .AnchorsMatchLines),
-            regularFont = regularFont where
-            range.length > 0
-            else {
-                print("Failed to remove formatting")
-                return
+        guard let regularFont = regularFont else { return }
+        guard range.length > 0, let listHeadRegex = try? NSRegularExpression(pattern: "^(([0-9]+\\.\\u00A0)|(\\u2022\\u00A0)).*$", options: .AnchorsMatchLines) else {
+            print("Failed to remove formatting")
+            return
         }
         
         listHeadRegex.matchesInString(textView.text, options: [], range: range).forEach { match in
