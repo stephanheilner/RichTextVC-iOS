@@ -1,0 +1,810 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		085A718981B05D43C5EF25B782B204BB /* RichTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAB62163C99E3674BD7E341CB5D1B4E /* RichTextViewController.swift */; };
+		20F1354D3806FE7165D85C92EDC83DBB /* Pods-RichTextVC-iOS-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 092943830119160E8450F4D3B47BD689 /* Pods-RichTextVC-iOS-Tests-dummy.m */; };
+		366DDA9029F147C19CDA1630F65CB99D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		6BDDE569AB8DDFC3514448CA70D16E60 /* Pods-RichTextVC-iOS-Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86A406FAF47A36923DA4EFCE7B9153BF /* Pods-RichTextVC-iOS-Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98CED70616C4B1C33FF33D91518480B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		A018BCD0F67F8AF936007677AEBCE601 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		A70ABEE9E84FD6D56BBD1BD045AB2996 /* NSRange+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49377EF0C3AA763AB5025B1154974A86 /* NSRange+Extras.swift */; };
+		AB8FF05595C807CCDB13A0E00B534A26 /* RichTextVC-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 01E9BA5FC15B1FE39D68B64C84CA9439 /* RichTextVC-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1C5966477D901000A961B7AD63585EA /* RichTextVC-iOS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CED810ABCE76CA30C01AA963B6AEE16C /* RichTextVC-iOS.bundle */; };
+		B8BAF2A27AA23E1233F92704D13CE495 /* Pods-RichTextVC-iOS-Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B8420C86B7A8A5411CFAB3257C1176F1 /* Pods-RichTextVC-iOS-Example-dummy.m */; };
+		D1CB80698261EDA9582E51CF572FDCE8 /* RichTextVC-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A7004C5EB05E00B8DCDF9577FB49AC /* RichTextVC-iOS-dummy.m */; };
+		EF9D7767AB2FBFF7205D53BC169194E0 /* String+Searching.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25629D1D6866029BF5762AB5B7E2BD0 /* String+Searching.swift */; };
+		F6C1220CF2652EF88A8BBF05539A39D5 /* Pods-RichTextVC-iOS-Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3E5BC50E33F3382CC6B43E8E63E707D /* Pods-RichTextVC-iOS-Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7AADE7BD4ADC3E0F45B0C3DCD498D80E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA61D89E7C22CF75D3C48CA8D754B87B;
+			remoteInfo = "RichTextVC-iOS";
+		};
+		9888F7F39F54340F64278FE4585B6B9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA8768B2CD637D01D0DBF13C9A2564BF;
+			remoteInfo = "RichTextVC-iOS-RichTextVC-iOS";
+		};
+		E779B19CC79863146C8983285193D1EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA61D89E7C22CF75D3C48CA8D754B87B;
+			remoteInfo = "RichTextVC-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01E9BA5FC15B1FE39D68B64C84CA9439 /* RichTextVC-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RichTextVC-iOS-umbrella.h"; sourceTree = "<group>"; };
+		092943830119160E8450F4D3B47BD689 /* Pods-RichTextVC-iOS-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RichTextVC-iOS-Tests-dummy.m"; sourceTree = "<group>"; };
+		119351950C1616B482CF98AD7448CF1A /* Pods-RichTextVC-iOS-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RichTextVC-iOS-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1C86947A6C167414B2FACB7D2109C894 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A92194E878A3F2B46CBA65D133C066D /* RichTextVC-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "RichTextVC-iOS.xcconfig"; sourceTree = "<group>"; };
+		2BC75951AFE4D10E2F7014818B34A01E /* RichTextVC-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RichTextVC-iOS-prefix.pch"; sourceTree = "<group>"; };
+		3CCC07C67118EF0215EA02EB23D03E65 /* Pods-RichTextVC-iOS-Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RichTextVC-iOS-Example.modulemap"; sourceTree = "<group>"; };
+		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		49377EF0C3AA763AB5025B1154974A86 /* NSRange+Extras.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSRange+Extras.swift"; sourceTree = "<group>"; };
+		5A7906CD29FC009DE43091DDA5599421 /* Pods_RichTextVC_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RichTextVC_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		614E8601D6B6465E73DF4A854DE3ED3B /* Pods_RichTextVC_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RichTextVC_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AAB62163C99E3674BD7E341CB5D1B4E /* RichTextViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RichTextViewController.swift; sourceTree = "<group>"; };
+		7C422B50D844D4945E5E44FAF4DFD9E3 /* Pods-RichTextVC-iOS-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RichTextVC-iOS-Tests-resources.sh"; sourceTree = "<group>"; };
+		84E07BDA5EF7181E366A45F7BE469C49 /* RichTextVC_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RichTextVC_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86A406FAF47A36923DA4EFCE7B9153BF /* Pods-RichTextVC-iOS-Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RichTextVC-iOS-Example-umbrella.h"; sourceTree = "<group>"; };
+		8807DC3CF82DCFD53DCDE4D4F7A74C91 /* Pods-RichTextVC-iOS-Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RichTextVC-iOS-Example-frameworks.sh"; sourceTree = "<group>"; };
+		8EAF051DC08FC42FB793A54FBCD40A4E /* Pods-RichTextVC-iOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RichTextVC-iOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		9057514D08608FC141D3E0FF8E34F009 /* RichTextVC-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "RichTextVC-iOS.modulemap"; sourceTree = "<group>"; };
+		925DC0CB44FE12F213413D30FAB07585 /* Pods-RichTextVC-iOS-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RichTextVC-iOS-Example.release.xcconfig"; sourceTree = "<group>"; };
+		9B0361A761ADE5C391B4CF6DB2A1178A /* Pods-RichTextVC-iOS-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RichTextVC-iOS-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A0ABBDE9E8D90FFE0DBE4F09C568C60A /* Pods-RichTextVC-iOS-Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RichTextVC-iOS-Example-resources.sh"; sourceTree = "<group>"; };
+		A37BB6DE4552E9CC9A3BCBDA2614FAE7 /* Pods-RichTextVC-iOS-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RichTextVC-iOS-Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		A3E5BC50E33F3382CC6B43E8E63E707D /* Pods-RichTextVC-iOS-Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RichTextVC-iOS-Tests-umbrella.h"; sourceTree = "<group>"; };
+		A90E44CD393C7A2144DD4C70CD233EB4 /* Pods-RichTextVC-iOS-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RichTextVC-iOS-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B6A3D102C22AB9984EE0FCFB86F1C36E /* Pods-RichTextVC-iOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RichTextVC-iOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B8420C86B7A8A5411CFAB3257C1176F1 /* Pods-RichTextVC-iOS-Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RichTextVC-iOS-Example-dummy.m"; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CD9B6CB17981D0760B3E412B9C4C677F /* Pods-RichTextVC-iOS-Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RichTextVC-iOS-Tests-frameworks.sh"; sourceTree = "<group>"; };
+		CED810ABCE76CA30C01AA963B6AEE16C /* RichTextVC-iOS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RichTextVC-iOS.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2A7004C5EB05E00B8DCDF9577FB49AC /* RichTextVC-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RichTextVC-iOS-dummy.m"; sourceTree = "<group>"; };
+		DA7113EB5599FC2E89C968E36B8C03AA /* Pods-RichTextVC-iOS-Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RichTextVC-iOS-Tests.modulemap"; sourceTree = "<group>"; };
+		DCD973DBB2BC1A3B9201D1685CDBAA6D /* Pods-RichTextVC-iOS-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RichTextVC-iOS-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DD05BFF67177F9D8A164815EB2104CFD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E25629D1D6866029BF5762AB5B7E2BD0 /* String+Searching.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Searching.swift"; sourceTree = "<group>"; };
+		FC084FADC27E55E5CEE32F79B1CA8EC5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		44E0E90DD6034A06CFAC8015DF5E42FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4727FAE9F92D7CFADF97EFF71DB0C941 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A018BCD0F67F8AF936007677AEBCE601 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CBD613EE3DF9234B2E9688A7876965E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				366DDA9029F147C19CDA1630F65CB99D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C42298B7BD46CB3719F057F22A94BC6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98CED70616C4B1C33FF33D91518480B6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		042A210A0D6ED0C93A6A3FE8D927EE42 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				6BE42DC0BBF8687AC4E073F572835F0E /* Classes */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		3DC7A3DDD682E736B54EBA06BECD545F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1C86947A6C167414B2FACB7D2109C894 /* Info.plist */,
+				9057514D08608FC141D3E0FF8E34F009 /* RichTextVC-iOS.modulemap */,
+				2A92194E878A3F2B46CBA65D133C066D /* RichTextVC-iOS.xcconfig */,
+				D2A7004C5EB05E00B8DCDF9577FB49AC /* RichTextVC-iOS-dummy.m */,
+				2BC75951AFE4D10E2F7014818B34A01E /* RichTextVC-iOS-prefix.pch */,
+				01E9BA5FC15B1FE39D68B64C84CA9439 /* RichTextVC-iOS-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/RichTextVC-iOS";
+			sourceTree = "<group>";
+		};
+		5AEFD851CA22A17CA0E68E54499ED81C /* Pods-RichTextVC-iOS-Example */ = {
+			isa = PBXGroup;
+			children = (
+				DD05BFF67177F9D8A164815EB2104CFD /* Info.plist */,
+				3CCC07C67118EF0215EA02EB23D03E65 /* Pods-RichTextVC-iOS-Example.modulemap */,
+				DCD973DBB2BC1A3B9201D1685CDBAA6D /* Pods-RichTextVC-iOS-Example-acknowledgements.markdown */,
+				A37BB6DE4552E9CC9A3BCBDA2614FAE7 /* Pods-RichTextVC-iOS-Example-acknowledgements.plist */,
+				B8420C86B7A8A5411CFAB3257C1176F1 /* Pods-RichTextVC-iOS-Example-dummy.m */,
+				8807DC3CF82DCFD53DCDE4D4F7A74C91 /* Pods-RichTextVC-iOS-Example-frameworks.sh */,
+				A0ABBDE9E8D90FFE0DBE4F09C568C60A /* Pods-RichTextVC-iOS-Example-resources.sh */,
+				86A406FAF47A36923DA4EFCE7B9153BF /* Pods-RichTextVC-iOS-Example-umbrella.h */,
+				A90E44CD393C7A2144DD4C70CD233EB4 /* Pods-RichTextVC-iOS-Example.debug.xcconfig */,
+				925DC0CB44FE12F213413D30FAB07585 /* Pods-RichTextVC-iOS-Example.release.xcconfig */,
+			);
+			name = "Pods-RichTextVC-iOS-Example";
+			path = "Target Support Files/Pods-RichTextVC-iOS-Example";
+			sourceTree = "<group>";
+		};
+		5B7FFF7C5D096C4B54F19FD1AD6982DD /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5AEFD851CA22A17CA0E68E54499ED81C /* Pods-RichTextVC-iOS-Example */,
+				905C023EEDB58A801F33E72F4DB5D93C /* Pods-RichTextVC-iOS-Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6BE42DC0BBF8687AC4E073F572835F0E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				49377EF0C3AA763AB5025B1154974A86 /* NSRange+Extras.swift */,
+				7AAB62163C99E3674BD7E341CB5D1B4E /* RichTextViewController.swift */,
+				E25629D1D6866029BF5762AB5B7E2BD0 /* String+Searching.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				D9F7722D1FB2E89ACFC6221263249C9C /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				E9762E5554BB2E5A0AD3DA4EBAB0096A /* Products */,
+				5B7FFF7C5D096C4B54F19FD1AD6982DD /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		905C023EEDB58A801F33E72F4DB5D93C /* Pods-RichTextVC-iOS-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FC084FADC27E55E5CEE32F79B1CA8EC5 /* Info.plist */,
+				DA7113EB5599FC2E89C968E36B8C03AA /* Pods-RichTextVC-iOS-Tests.modulemap */,
+				119351950C1616B482CF98AD7448CF1A /* Pods-RichTextVC-iOS-Tests-acknowledgements.markdown */,
+				9B0361A761ADE5C391B4CF6DB2A1178A /* Pods-RichTextVC-iOS-Tests-acknowledgements.plist */,
+				092943830119160E8450F4D3B47BD689 /* Pods-RichTextVC-iOS-Tests-dummy.m */,
+				CD9B6CB17981D0760B3E412B9C4C677F /* Pods-RichTextVC-iOS-Tests-frameworks.sh */,
+				7C422B50D844D4945E5E44FAF4DFD9E3 /* Pods-RichTextVC-iOS-Tests-resources.sh */,
+				A3E5BC50E33F3382CC6B43E8E63E707D /* Pods-RichTextVC-iOS-Tests-umbrella.h */,
+				B6A3D102C22AB9984EE0FCFB86F1C36E /* Pods-RichTextVC-iOS-Tests.debug.xcconfig */,
+				8EAF051DC08FC42FB793A54FBCD40A4E /* Pods-RichTextVC-iOS-Tests.release.xcconfig */,
+			);
+			name = "Pods-RichTextVC-iOS-Tests";
+			path = "Target Support Files/Pods-RichTextVC-iOS-Tests";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D9F7722D1FB2E89ACFC6221263249C9C /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3B6B098F686944AF9F57223B641B960 /* RichTextVC-iOS */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		E3B6B098F686944AF9F57223B641B960 /* RichTextVC-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				042A210A0D6ED0C93A6A3FE8D927EE42 /* src */,
+				3DC7A3DDD682E736B54EBA06BECD545F /* Support Files */,
+			);
+			name = "RichTextVC-iOS";
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E9762E5554BB2E5A0AD3DA4EBAB0096A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A7906CD29FC009DE43091DDA5599421 /* Pods_RichTextVC_iOS_Example.framework */,
+				614E8601D6B6465E73DF4A854DE3ED3B /* Pods_RichTextVC_iOS_Tests.framework */,
+				CED810ABCE76CA30C01AA963B6AEE16C /* RichTextVC-iOS.bundle */,
+				84E07BDA5EF7181E366A45F7BE469C49 /* RichTextVC_iOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		25F4EEBF707FA41834E02B686C8B6123 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB8FF05595C807CCDB13A0E00B534A26 /* RichTextVC-iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50D20BBEDEF8D1F127C7D88316A9B720 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6C1220CF2652EF88A8BBF05539A39D5 /* Pods-RichTextVC-iOS-Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A2307B23B4DB65133AC9BD040EC323E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BDDE569AB8DDFC3514448CA70D16E60 /* Pods-RichTextVC-iOS-Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3C4104195A8160472437ACB07A4F1A11 /* Pods-RichTextVC-iOS-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BE9D7F1BADB4BB74C87FBF5704A50CB /* Build configuration list for PBXNativeTarget "Pods-RichTextVC-iOS-Tests" */;
+			buildPhases = (
+				DF979ED34F62555610F18A345BB87011 /* Sources */,
+				C42298B7BD46CB3719F057F22A94BC6C /* Frameworks */,
+				50D20BBEDEF8D1F127C7D88316A9B720 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C7AFF0CC0E83CBEF5C10E789744DE18 /* PBXTargetDependency */,
+			);
+			name = "Pods-RichTextVC-iOS-Tests";
+			productName = "Pods-RichTextVC-iOS-Tests";
+			productReference = 614E8601D6B6465E73DF4A854DE3ED3B /* Pods_RichTextVC_iOS_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		416DDB9142EBA506A81779066E3E872E /* Pods-RichTextVC-iOS-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2529664460A54B4156C6556568165E28 /* Build configuration list for PBXNativeTarget "Pods-RichTextVC-iOS-Example" */;
+			buildPhases = (
+				80CD86BAD5374B971E3003E00FCFA025 /* Sources */,
+				4727FAE9F92D7CFADF97EFF71DB0C941 /* Frameworks */,
+				5A2307B23B4DB65133AC9BD040EC323E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				748CEBE7ADB29219604BE5484D7DCC1E /* PBXTargetDependency */,
+			);
+			name = "Pods-RichTextVC-iOS-Example";
+			productName = "Pods-RichTextVC-iOS-Example";
+			productReference = 5A7906CD29FC009DE43091DDA5599421 /* Pods_RichTextVC_iOS_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA61D89E7C22CF75D3C48CA8D754B87B /* RichTextVC-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 021A045144BF013817FA562DC0DF1A93 /* Build configuration list for PBXNativeTarget "RichTextVC-iOS" */;
+			buildPhases = (
+				DB181D0519A67BDB1D9F9518517BD387 /* Sources */,
+				5CBD613EE3DF9234B2E9688A7876965E /* Frameworks */,
+				2F313BD2872AB94F56B69F3EF8FB8909 /* Resources */,
+				25F4EEBF707FA41834E02B686C8B6123 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6BAD196521EF450EE12971FF5607D33 /* PBXTargetDependency */,
+			);
+			name = "RichTextVC-iOS";
+			productName = "RichTextVC-iOS";
+			productReference = 84E07BDA5EF7181E366A45F7BE469C49 /* RichTextVC_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA8768B2CD637D01D0DBF13C9A2564BF /* RichTextVC-iOS-RichTextVC-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED3F15DADF0BE874E9FF4819DEDF363F /* Build configuration list for PBXNativeTarget "RichTextVC-iOS-RichTextVC-iOS" */;
+			buildPhases = (
+				F0B4A6BFA7A3CC43BE1CF2B504237730 /* Sources */,
+				44E0E90DD6034A06CFAC8015DF5E42FD /* Frameworks */,
+				6CDE033AA3EA49B9D03FB5207086CA63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RichTextVC-iOS-RichTextVC-iOS";
+			productName = "RichTextVC-iOS-RichTextVC-iOS";
+			productReference = CED810ABCE76CA30C01AA963B6AEE16C /* RichTextVC-iOS.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					3C4104195A8160472437ACB07A4F1A11 = {
+						LastSwiftMigration = 0800;
+					};
+					416DDB9142EBA506A81779066E3E872E = {
+						LastSwiftMigration = 0800;
+					};
+					BA61D89E7C22CF75D3C48CA8D754B87B = {
+						LastSwiftMigration = 0800;
+					};
+					BA8768B2CD637D01D0DBF13C9A2564BF = {
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = E9762E5554BB2E5A0AD3DA4EBAB0096A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				416DDB9142EBA506A81779066E3E872E /* Pods-RichTextVC-iOS-Example */,
+				3C4104195A8160472437ACB07A4F1A11 /* Pods-RichTextVC-iOS-Tests */,
+				BA61D89E7C22CF75D3C48CA8D754B87B /* RichTextVC-iOS */,
+				BA8768B2CD637D01D0DBF13C9A2564BF /* RichTextVC-iOS-RichTextVC-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F313BD2872AB94F56B69F3EF8FB8909 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1C5966477D901000A961B7AD63585EA /* RichTextVC-iOS.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CDE033AA3EA49B9D03FB5207086CA63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80CD86BAD5374B971E3003E00FCFA025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8BAF2A27AA23E1233F92704D13CE495 /* Pods-RichTextVC-iOS-Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB181D0519A67BDB1D9F9518517BD387 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70ABEE9E84FD6D56BBD1BD045AB2996 /* NSRange+Extras.swift in Sources */,
+				D1CB80698261EDA9582E51CF572FDCE8 /* RichTextVC-iOS-dummy.m in Sources */,
+				085A718981B05D43C5EF25B782B204BB /* RichTextViewController.swift in Sources */,
+				EF9D7767AB2FBFF7205D53BC169194E0 /* String+Searching.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF979ED34F62555610F18A345BB87011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20F1354D3806FE7165D85C92EDC83DBB /* Pods-RichTextVC-iOS-Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0B4A6BFA7A3CC43BE1CF2B504237730 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C7AFF0CC0E83CBEF5C10E789744DE18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "RichTextVC-iOS";
+			target = BA61D89E7C22CF75D3C48CA8D754B87B /* RichTextVC-iOS */;
+			targetProxy = 7AADE7BD4ADC3E0F45B0C3DCD498D80E /* PBXContainerItemProxy */;
+		};
+		748CEBE7ADB29219604BE5484D7DCC1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "RichTextVC-iOS";
+			target = BA61D89E7C22CF75D3C48CA8D754B87B /* RichTextVC-iOS */;
+			targetProxy = E779B19CC79863146C8983285193D1EB /* PBXContainerItemProxy */;
+		};
+		A6BAD196521EF450EE12971FF5607D33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "RichTextVC-iOS-RichTextVC-iOS";
+			target = BA8768B2CD637D01D0DBF13C9A2564BF /* RichTextVC-iOS-RichTextVC-iOS */;
+			targetProxy = 9888F7F39F54340F64278FE4585B6B9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		048FA451BEA4598288A662C87FE1415E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A90E44CD393C7A2144DD4C70CD233EB4 /* Pods-RichTextVC-iOS-Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-RichTextVC-iOS-Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RichTextVC-iOS-Example/Pods-RichTextVC-iOS-Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_RichTextVC_iOS_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2B389FAB51F6EEA43F72CA7BDC8E8E28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		46C29A3E89D8361D43F913D5D880FBB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6A3D102C22AB9984EE0FCFB86F1C36E /* Pods-RichTextVC-iOS-Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-RichTextVC-iOS-Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RichTextVC-iOS-Tests/Pods-RichTextVC-iOS-Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_RichTextVC_iOS_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5A0C6FE968931D888F00C9EC18DDF5BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9B3E4B355F6454355F69B1A647A6AFAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A92194E878A3F2B46CBA65D133C066D /* RichTextVC-iOS.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "RichTextVC-iOS";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		A39AF5451DF24CD5C1E5320075AA1420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A92194E878A3F2B46CBA65D133C066D /* RichTextVC-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RichTextVC-iOS/RichTextVC-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RichTextVC-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RichTextVC-iOS/RichTextVC-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = RichTextVC_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A9EDD9314161C72AF4D5DFFE7266D6EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EAF051DC08FC42FB793A54FBCD40A4E /* Pods-RichTextVC-iOS-Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-RichTextVC-iOS-Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RichTextVC-iOS-Tests/Pods-RichTextVC-iOS-Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_RichTextVC_iOS_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CB93B02691F97E8D2B17AA2ED5A30E9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A92194E878A3F2B46CBA65D133C066D /* RichTextVC-iOS.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/RichTextVC-iOS/RichTextVC-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RichTextVC-iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RichTextVC-iOS/RichTextVC-iOS.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = RichTextVC_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D2CF758ADF749728A50F4ACC640FA8A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 925DC0CB44FE12F213413D30FAB07585 /* Pods-RichTextVC-iOS-Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-RichTextVC-iOS-Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RichTextVC-iOS-Example/Pods-RichTextVC-iOS-Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_RichTextVC_iOS_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F87EAC47183A5E8648A4003BC52EA98D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A92194E878A3F2B46CBA65D133C066D /* RichTextVC-iOS.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "RichTextVC-iOS";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		021A045144BF013817FA562DC0DF1A93 /* Build configuration list for PBXNativeTarget "RichTextVC-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A39AF5451DF24CD5C1E5320075AA1420 /* Debug */,
+				CB93B02691F97E8D2B17AA2ED5A30E9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2529664460A54B4156C6556568165E28 /* Build configuration list for PBXNativeTarget "Pods-RichTextVC-iOS-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				048FA451BEA4598288A662C87FE1415E /* Debug */,
+				D2CF758ADF749728A50F4ACC640FA8A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BE9D7F1BADB4BB74C87FBF5704A50CB /* Build configuration list for PBXNativeTarget "Pods-RichTextVC-iOS-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46C29A3E89D8361D43F913D5D880FBB7 /* Debug */,
+				A9EDD9314161C72AF4D5DFFE7266D6EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B389FAB51F6EEA43F72CA7BDC8E8E28 /* Debug */,
+				5A0C6FE968931D888F00C9EC18DDF5BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED3F15DADF0BE874E9FF4819DEDF363F /* Build configuration list for PBXNativeTarget "RichTextVC-iOS-RichTextVC-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F87EAC47183A5E8648A4003BC52EA98D /* Debug */,
+				9B3E4B355F6454355F69B1A647A6AFAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
