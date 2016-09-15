@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA61D89E7C22CF75D3C48CA8D754B87B"
-               BuildableName = "RichTextVC_iOS.framework"
-               BlueprintName = "RichTextVC-iOS"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "5959A6811CCAA4CC005031E6"
+               BuildableName = "RichTextVC-iOS-Example.app"
+               BlueprintName = "RichTextVC-iOS-Example"
+               ReferencedContainer = "container:RichTextVC-iOS-Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5959A6811CCAA4CC005031E6"
+            BuildableName = "RichTextVC-iOS-Example.app"
+            BlueprintName = "RichTextVC-iOS-Example"
+            ReferencedContainer = "container:RichTextVC-iOS-Example.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BA61D89E7C22CF75D3C48CA8D754B87B"
-            BuildableName = "RichTextVC_iOS.framework"
-            BlueprintName = "RichTextVC-iOS"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "5959A6811CCAA4CC005031E6"
+            BuildableName = "RichTextVC-iOS-Example.app"
+            BlueprintName = "RichTextVC-iOS-Example"
+            ReferencedContainer = "container:RichTextVC-iOS-Example.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,6 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5959A6811CCAA4CC005031E6"
+            BuildableName = "RichTextVC-iOS-Example.app"
+            BlueprintName = "RichTextVC-iOS-Example"
+            ReferencedContainer = "container:RichTextVC-iOS-Example.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
