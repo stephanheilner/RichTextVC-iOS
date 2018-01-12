@@ -45,11 +45,11 @@ open class RichTextViewController: UIViewController {
         
         return listParagraphStyle
     }()
-    fileprivate var defaultListAttributes: [String: Any]? {
+    fileprivate var defaultListAttributes: [NSAttributedStringKey: Any]? {
         guard let regularFont = regularFont else { return nil }
         
-        var listAttributes: [String : Any] = [NSFontAttributeName: regularFont, NSParagraphStyleAttributeName: defaultListParagraphStyle]
-        if let textColor = textView.typingAttributes[NSForegroundColorAttributeName] { listAttributes[NSForegroundColorAttributeName] = textColor }
+        var listAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey.font: regularFont, NSAttributedStringKey.paragraphStyle: defaultListParagraphStyle]
+        if let textColor = textView.typingAttributes[NSAttributedStringKey.foregroundColor.rawValue] { listAttributes[NSAttributedStringKey.foregroundColor] = textColor }
 
         return listAttributes
     }
@@ -120,11 +120,11 @@ open class RichTextViewController: UIViewController {
         let fullChangeRange = NSRange(location: previousNewLineIndex, length: nextNewLineIndex - previousNewLineIndex)
         
         textView.textStorage.beginEditing()
-        textView.textStorage.addAttribute(NSParagraphStyleAttributeName, value: defaultParagraphStyle, range: fullChangeRange)
+        textView.textStorage.addAttribute(NSAttributedStringKey.paragraphStyle, value: defaultParagraphStyle, range: fullChangeRange)
         textView.textStorage.endEditing()
         
         if textView.selectedRange.endLocation == textView.text.length {
-            textView.typingAttributes[NSParagraphStyleAttributeName] = defaultParagraphStyle
+            textView.typingAttributes[NSAttributedStringKey.paragraphStyle.rawValue] = defaultParagraphStyle
         }
     }
     
@@ -137,7 +137,7 @@ open class RichTextViewController: UIViewController {
     fileprivate func addText(_ text: String, toTextView textView: UITextView, atIndex index: Int) {
         previousTypingAttributes = textView.typingAttributes
         
-        let attributes = defaultListAttributes ?? (index < textView.text.length ? textView.attributedText.attributes(at: index, effectiveRange: nil) : textView.typingAttributes)
+        let attributes: [NSAttributedStringKey: Any] = defaultListAttributes ?? (index < textView.text.length ? textView.attributedText.attributes(at: index, effectiveRange: nil) : textView.typingAttributesNSAttributedStringKey)
         textView.textStorage.beginEditing()
         textView.textStorage.insert(NSAttributedString(string: text, attributes: attributes), at: index)
         textView.textStorage.endEditing()
@@ -359,7 +359,7 @@ open class RichTextViewController: UIViewController {
             
             if let subString = textView.attributedText?.attributedSubstring(from: previousRange).string, subString == RichTextViewController.bulletedLineStarter {
                 textView.textStorage.beginEditing()
-                textView.textStorage.replaceCharacters(in: previousRange, with: NSAttributedString(string: "", attributes: textView.typingAttributes))
+                textView.textStorage.replaceCharacters(in: previousRange, with: NSAttributedString(string: "", attributes: textView.typingAttributesNSAttributedStringKey))
                 textView.textStorage.endEditing()
             } else {
                 addText(bulletedString, toTextView: textView, atIndex: range.location)
@@ -555,7 +555,7 @@ open class RichTextViewController: UIViewController {
         
         attributedText.beginEditing()
         attributedText.enumerateAttributes(in: textView.selectedRange, options: []) { _, range, _ in
-            attributedText.addAttribute(NSFontAttributeName, value: font, range: range)
+            attributedText.addAttribute(NSAttributedStringKey.font, value: font, range: range)
         }
         attributedText.endEditing()
         
@@ -570,9 +570,9 @@ open class RichTextViewController: UIViewController {
         }
         
         listHeadRegex.matches(in: textView.text, options: [], range: range).forEach { match in
-            let matchedRange = match.rangeAt(1)
+            let matchedRange = match.range(at: 1)
             self.textView.textStorage.beginEditing()
-            self.textView.textStorage.setAttributes([NSFontAttributeName: regularFont], range: matchedRange)
+            self.textView.textStorage.setAttributes([NSAttributedStringKey.font: regularFont], range: matchedRange)
             self.textView.textStorage.endEditing()
         }
     }
@@ -585,14 +585,14 @@ open class RichTextViewController: UIViewController {
         var font: UIFont?
         if range.length == 0 {
             if let previousTypingAttributes = previousTypingAttributes, range.endLocation == textView.text.length {
-                font = previousTypingAttributes[NSFontAttributeName] as? UIFont
+                font = previousTypingAttributes[NSAttributedStringKey.font.rawValue] as? UIFont
             } else {
-                font = textView.typingAttributes[NSFontAttributeName] as? UIFont
+                font = textView.typingAttributes[NSAttributedStringKey.font.rawValue] as? UIFont
             }
         }
         
         textView.attributedText.enumerateAttributes(in: range, options: []) { dictionary, _, _ in
-            font = font ?? dictionary[NSFontAttributeName] as? UIFont
+            font = font ?? dictionary[NSAttributedStringKey.font] as? UIFont
         }
         
         return font == boldFont || font == boldItalicFont
@@ -609,7 +609,7 @@ open class RichTextViewController: UIViewController {
         if rangeLongerThanZero {
             applyFontAttribute(fontToApply)
         } else {
-            textView.typingAttributes[NSFontAttributeName] = fontToApply
+            textView.typingAttributes[NSAttributedStringKey.font.rawValue] = fontToApply
         }
         
         disableBold = isBold
@@ -624,14 +624,14 @@ open class RichTextViewController: UIViewController {
         var font: UIFont?
         if range.length == 0 {
             if let previousTypingAttributes = previousTypingAttributes, range.endLocation == textView.text.length {
-                font = previousTypingAttributes[NSFontAttributeName] as? UIFont
+                font = previousTypingAttributes[NSAttributedStringKey.font.rawValue] as? UIFont
             } else {
-                font = textView.typingAttributes[NSFontAttributeName] as? UIFont
+                font = textView.typingAttributes[NSAttributedStringKey.font.rawValue] as? UIFont
             }
         }
         
         textView.attributedText.enumerateAttributes(in: range, options: []) { dictionary, _, _ in
-            font = font ?? dictionary[NSFontAttributeName] as? UIFont
+            font = font ?? dictionary[NSAttributedStringKey.font] as? UIFont
         }
         
         return font == italicFont || font == boldItalicFont
@@ -648,7 +648,7 @@ open class RichTextViewController: UIViewController {
         if rangeLongerThanZero {
             applyFontAttribute(fontToApply)
         } else {
-            textView.typingAttributes[NSFontAttributeName] = fontToApply
+            textView.typingAttributes[NSAttributedStringKey.font.rawValue] = fontToApply
         }
         
         disableItalic = isItalic
@@ -780,10 +780,22 @@ extension RichTextViewController: UITextViewDelegate {
         return !changed
     }
     
-    func textChanged(_ notification: Notification) {
+    @objc func textChanged(_ notification: Notification) {
         guard notification.object as? UITextView == textView else { return }
 
         if let typingAttributes = previousTypingAttributes { textView.typingAttributes = typingAttributes }
+    }
+    
+}
+
+fileprivate extension UITextView {
+    
+    var typingAttributesNSAttributedStringKey: [NSAttributedStringKey: Any] {
+        var attributes = [NSAttributedStringKey: Any]()
+        for (key, value) in typingAttributes {
+            attributes[NSAttributedStringKey(rawValue: key)] = value
+        }
+        return attributes
     }
     
 }
